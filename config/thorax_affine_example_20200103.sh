@@ -1,7 +1,7 @@
 # Config Version 2.0
 
 DATA_ROOT=/nfs/masi/xuk9/SPORE
-SRC_ROOT=/home/local/VANDERBILT/xuk9/03-Projects/03-Thorax-FL/src/ThoraxRegistration
+SRC_ROOT=/home/local/VANDERBILT/xuk9/03-Projects/04-registration_tutorial
 PYTHON_ENV=/home/local/VANDERBILT/xuk9/anaconda3/envs/python37/bin/python
 REG_TOOL_ROOT=/home/local/VANDERBILT/gaor2/bin_tool/rg/niftyreg
 FSL_ROOT=/usr/local/fsl/bin

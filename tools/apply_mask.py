@@ -1,5 +1,5 @@
 import os
-from tools.utils import *
+from utils import *
 import argparse
 import numpy as np
 import nibabel as nib

@@ -56,22 +56,22 @@ echo "Output image is ${out_image}"
 echo "Temp folder is ${temp_folder}"
 echo ""
 
+# Resampling
+TEMP_FOLDER_RESAMPLE=${temp_folder}/resample_temp
+resample_image ${in_image} ${IM_RESAMPLE} ${TEMP_FOLDER_RESAMPLE}
+
 # Get body mask
-get_body_mask ${in_image} ${IM_BODY_MASKED} ${IM_BODY_MASK}
+get_body_mask ${IM_RESAMPLE} ${IM_BODY_MASKED} ${IM_BODY_MASK}
 
 # Get z roi mask
-get_z_roi_mask ${in_image} ${IM_LUNG_MASK} ${IM_Z_ROI_REGION} ${IM_Z_ROI_MASKED}
+get_z_roi_mask ${IM_RESAMPLE} ${IM_LUNG_MASK} ${IM_Z_ROI_REGION} ${IM_Z_ROI_MASKED}
 
 # Apply the mask
 apply_mask ${IM_BODY_MASKED} ${IM_Z_ROI_REGION} ${IM_MASKED}
 
-# Resampling
-TEMP_FOLDER_RESAMPLE=${temp_folder}/resample_temp
-resample_image ${IM_MASKED} ${IM_RESAMPLE} ${TEMP_FOLDER_RESAMPLE}
-
 # Padding image
 TEMP_FOLDER_PADDING=${temp_folder}/padding_temp
-padding_image ${IM_RESAMPLE} ${IM_PAD} ${TEMP_FOLDER_PADDING}
+padding_image ${IM_MASKED} ${IM_PAD} ${TEMP_FOLDER_PADDING}
 
 # Intensity clip
 intensity_clip ${IM_PAD} ${IM_INTENS_CLIP}

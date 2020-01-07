@@ -3,7 +3,7 @@ import numpy as np
 import argparse
 import os
 import time
-from tools.seg_lung import segment_a_lung
+from seg_lung import segment_a_lung
 import datetime
 
 def run_preprocess_method(method_str, nii_file_path, mask_file_path, roi_region_path, output_file_path, fsl_root):

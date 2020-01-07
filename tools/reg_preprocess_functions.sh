@@ -20,8 +20,9 @@ function resample_image {
   mkdir -p ${TEMP_FOLDER}/resample_mid_im
 
   set -o xtrace
-  ${FREESURFER_ROOT}/mri_convert -vs $SPACING_X $SPACING_Y $SPACING_Z ${IN_IM} ${RESAMPLE_MID_IM}
-  ${PYTHON_ENV} ${SRC_ROOT}/tools/fix_boundary_artifact_mri_convert.py --ori ${RESAMPLE_MID_IM} --out ${OUT_IM}
+#  ${FREESURFER_ROOT}/mri_convert -vs $SPACING_X $SPACING_Y $SPACING_Z ${IN_IM} ${RESAMPLE_MID_IM}
+#  ${PYTHON_ENV} ${SRC_ROOT}/tools/fix_boundary_artifact_mri_convert.py --ori ${RESAMPLE_MID_IM} --out ${OUT_IM}
+  ${FREESURFER_ROOT}/mri_convert -vs $SPACING_X $SPACING_Y $SPACING_Z ${IN_IM} ${OUT_IM}
   set +o xtrace
 
   if [ "$IF_REMOVE_TEMP_FILES" = true ] ; then
