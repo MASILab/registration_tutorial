@@ -94,10 +94,11 @@ Propagate the transformation (affine matrix) to original moving image using near
 
 ### Affine Template/Atlas (SPORE)
 
-||||
+|Unregistered| Affine | Reference |
 |:---:|:---:|:---:|
-|![ref_intens_clip_C](./figs/template_affine_1_A.png)|![ref_intens_clip_C](./figs/template_affine_1_S.png)|![ref_intens_clip_C](./figs/template_affine_1_C.png)|
-|![ref_intens_clip_C](./figs/variance_A.png)|![ref_intens_clip_C](./figs/variance_S.png)|![ref_intens_clip_C](./figs/variance_C.png)|
+|![ref_intens_clip_C](./figs/ori_average_A.png)|![ref_intens_clip_C](./figs/template_affine_1_A.png)|![ref_intens_clip_C](./figs/ref_pad_A.png)|
+|![ref_intens_clip_C](./figs/ori_average_S.png)|![ref_intens_clip_C](./figs/template_affine_1_S.png)|![ref_intens_clip_C](./figs/ref_pad_S.png)|
+|![ref_intens_clip_C](./figs/ori_average_C.png)|![ref_intens_clip_C](./figs/template_affine_1_C.png)|![ref_intens_clip_C](./figs/ref_pad_C.png)|
 
 Note: 1 out of 1473 failed case.
 
