@@ -1,6 +1,6 @@
 ## Registration pipeline, Affine (Thorax LDCT, SPORE, 1/6/2020)
 
-A working pipeline for Thorax CT registration. NIFTIREG is used as registration engine. Please contact Kaiwen (kaiwen.xu@vanderbilt.edu) for any issues.
+A working pipeline for Thorax CT affine registration. NIFTIREG is used as registration engine. Please contact Kaiwen (kaiwen.xu@vanderbilt.edu) for any issues.
 
 ### Methods
 

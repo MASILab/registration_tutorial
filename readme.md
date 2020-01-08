@@ -29,7 +29,7 @@ FMRIB Software Library (FSL) version 5.0
     # rigid image registration 
     flirt -v -dof 6 -in ${SOURCEIMG} -ref ${TARGETIMG} -omat ${RIGIDTFM} -out ${RIGIDIMG} -nosearch
     # affine image registration
-     flirt -v -dof 9 -in ${SOURCEIMG} -ref ${TARGETIMG} -init ${RIGIDTFM} -omat ${AFFINETFM} -out ${AFFINEIMG} -nosearch
+    flirt -v -dof 9 -in ${SOURCEIMG} -ref ${TARGETIMG} -init ${RIGIDTFM} -omat ${AFFINETFM} -out ${AFFINEIMG} -nosearch
     # affine label propagation
     flirt -v -in ${SOURCELABEL} -ref ${TARGETIMG} -applyxfm -init ${AFFINETFM} -out ${AFFINELABEL} -interp nearestneighbour
     # non-rigid image registration
