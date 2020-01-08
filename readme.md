@@ -9,7 +9,7 @@ This repository includes the step-by-step instructions for body/thorax registrat
 
 Please refer to the review paper [1]. The following full registration commands and configuration options are frome the [supplementary materials](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4972188/bin/NIHMS805331-supplement-tbme-xu-2574816-mm_zip.zip) of [1].
 
-###FSL
+### FSL
 
 FMRIB Software Library (FSL) version 5.0
 (http://fsl.fmrib.ox.ac.uk/fsldownloads/)
@@ -37,7 +37,7 @@ FMRIB Software Library (FSL) version 5.0
     # non-rigid label propagation
     applywarp -v -i ${SOURCELABEL} -w ${NONRIGIDTFM} --interp=nn -r ${TARGETIMG} -o ${NONRIGIDLABEL}
 
-###ANTS-CC
+### ANTS-CC
 
 Advanced Normalization Tools (ANTs) version 1.9
 (http://sourceforge.net/projects/advants/files/ANTS/)
@@ -71,7 +71,7 @@ Advanced Normalization Tools (ANTs) version 1.9
     # non-rigid label propagation
     antsApplyTransforms --dimensionality 3 -i ${SOURCELABEL} -o ${NONRIGIDLABEL} -r ${TARGETIMG} -t ${NONRIGIDTFMWARP} ${NONRIGIDTFMAFFINE} -n NearestNeighbor
 
-###ANTS-QUICK-MI
+### ANTS-QUICK-MI
 
 Advanced Normalization Tools (ANTs) version 1.9
 (http://sourceforge.net/projects/advants/files/ANTS/)
@@ -105,7 +105,7 @@ Advanced Normalization Tools (ANTs) version 1.9
     # non-rigid label propagation
     antsApplyTransforms --dimensionality 3 -i ${SOURCELABEL} -o ${NONRIGIDLABEL} -r ${TARGETIMG} -t ${NONRIGIDTFMWARP} ${NONRIGIDTFMAFFINE} -n NearestNeighbor
 
-###IRTK
+### IRTK
 
 Image Registration Toolkit (IRTK) version 2.0
 (http://www.doc.ic.ac.uk/~dr/software/download.html)
@@ -131,7 +131,7 @@ Image Registration Toolkit (IRTK) version 2.0
     # non-rigid label propagation
     transformation ${SOURCELABEL} ${NONRIGIDLABEL} -dofin ${NONRIGIDTFM} -target ${TARGETIMG} -nn –matchInputType
 
-###NIFTYREG
+### NIFTYREG
 
 NiftyReg, version with the 390df2baaf809a625ed5afe0dbc81ca6a3f7c647 Git hash
 (http://sourceforge.net/p/niftyreg/git/ci/master/tree/)
@@ -155,7 +155,7 @@ NiftyReg, version with the 390df2baaf809a625ed5afe0dbc81ca6a3f7c647 Git hash
     # non-rigid label propagation
     reg_resample -inter 0 -ref ${TARGETIMG} -flo ${SOURCELABEL} -trans ${NONRIGIDTFM} -res ${NONRIGIDLABEL}
 
-###DEEDS
+### DEEDS
 
 DEnsE Displacement Sampling (http://mpheinrich.de/software.html)
 All parameters are internally defined. Please contact heinrich@imi.uni-luebeck.de for additional information.
