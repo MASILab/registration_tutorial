@@ -37,6 +37,12 @@ FMRIB Software Library (FSL) version 5.0
     # non-rigid label propagation
     applywarp -v -i ${SOURCELABEL} -w ${NONRIGIDTFM} --interp=nn -r ${TARGETIMG} -o ${NONRIGIDLABEL}
 
+**Remarks**
+
++ For flirt, DOF can be set to 12 (affine), 9 (traditional), 7 (global rescale) or 6 (rigid body). 
+  Full flirt user guide: https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FLIRT/UserGuide
+
+
 ### ANTS-CC
 
 Advanced Normalization Tools (ANTs) version 1.9
