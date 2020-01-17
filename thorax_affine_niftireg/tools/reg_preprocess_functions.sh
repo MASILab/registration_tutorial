@@ -29,6 +29,7 @@ function padding_image {
   IN_IM_INPUT=$1
   OUT_IM_INPUT=$2
   TEMP_FOLDER=$3
+  ENV_INTENSITY=$4 # -1000 for air
 
   TEMP_ADD1K=${TEMP_FOLDER}/add_1k
   TEMP_THR0=${TEMP_FOLDER}/thr_0
@@ -43,8 +44,8 @@ function padding_image {
   IN_IM=${IN_IM_INPUT}
   OUT_IM=${TEMP_ADD1K}/${file_name}
   echo "add 1000..."
-  echo "${FSL_ROOT}/fslmaths ${IN_IM} -add 1000 ${OUT_IM}"
-  ${FSL_ROOT}/fslmaths ${IN_IM} -add 1000 ${OUT_IM}
+  echo "${FSL_ROOT}/fslmaths ${IN_IM} -add $((-${ENV_INTENSITY})) ${OUT_IM}"
+  ${FSL_ROOT}/fslmaths ${IN_IM} -add $((-${ENV_INTENSITY})) ${OUT_IM}
   echo "Output image to ${OUT_IM}"
 
   IN_IM=${OUT_IM}
@@ -64,8 +65,8 @@ function padding_image {
   IN_IM=${OUT_IM}
   OUT_IM=${TEMP_SUB1K}/${file_name}
   echo "sub 1000..."
-  echo "${FSL_ROOT}/fslmaths ${IN_IM} -sub 1000 ${OUT_IM}"
-  ${FSL_ROOT}/fslmaths ${IN_IM} -sub 1000 ${OUT_IM}
+  echo "${FSL_ROOT}/fslmaths ${IN_IM} -sub $((-${ENV_INTENSITY})) ${OUT_IM}"
+  ${FSL_ROOT}/fslmaths ${IN_IM} -sub $((-${ENV_INTENSITY})) ${OUT_IM}
   echo "Output image to ${OUT_IM}"
 
   echo "Complete padding"

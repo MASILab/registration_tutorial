@@ -18,7 +18,7 @@ Preprocessing sub-steps:
 
 Resampling to same resolution
 
-    ${FREESURFER_ROOT}/mri_convert -vs $SPACING_X $SPACING_Y $SPACING_Z ${IN_IM} ${OUT_IM}        
+    ${C3D_ROOT}/c3d ${IN_IM} -resample-mm ${SPACING_X}x${SPACING_Y}x${SPACING_Z}mm -o ${OUT_IM}        
 
 Body mask based on connected component analysis
     
@@ -98,6 +98,9 @@ Propagate the transformation (affine matrix) to original moving image using near
 |![ref_intens_clip_C](./figs/moving_1_interp_pad_C.png)| ![ref_intens_clip_C](./figs/moving_2_interp_pad_C.png) | ![ref_intens_clip_C](./figs/moving_3_interp_pad_C.png) | ![ref_intens_clip_C](./figs/moving_4_interp_pad_C.png) | ![ref_intens_clip_C](./figs/moving_5_interp_pad_C.png) |  |
 |![ref_intens_clip_C](./figs/moving_1_interp_C.png)| ![ref_intens_clip_C](./figs/moving_2_interp_C.png) | ![ref_intens_clip_C](./figs/moving_3_interp_C.png) | ![ref_intens_clip_C](./figs/moving_4_interp_C.png) | ![ref_intens_clip_C](./figs/moving_5_interp_C.png) | ![ref_intens_clip_C](./figs/ref_interp_C.png) |
 
+<!---
+your comment goes here
+and here
 
 ### Affine Template/Atlas (SPORE)
 
@@ -108,3 +111,30 @@ Propagate the transformation (affine matrix) to original moving image using near
 |![ref_intens_clip_C](./figs/ori_average_C.png)|![ref_intens_clip_C](./figs/template_affine_1_C.png)| ![ref_intens_clip_C](./figs/variance_C.png) |![ref_intens_clip_C](./figs/ref_pad_C.png)|
 
 Note: 1 failed case out of 1473 scans.
+
+-->
+
+### Remarks on boundary handling of interpolation
+
+Interpolation substeps related to intensity-nan boundary handling.
+
+**Pad original image using nan**
+
+    padding_image ${IM_RESAMPLE} ${IM_PAD} ${TEMP_FOLDER_PADDING} ${INTERP_ENV_VAL}
+    ${C3D_ROOT}/c3d ${IM_PAD} -replace ${INTERP_ENV_VAL} nan -o ${IM_TO_NAN}
+    
+Example case (00000256time20170420, SPORE). Visualized using itksnap. nan voxel automatically change to 0:
+![pad_with_nan](./figs/pad_with_nan.png)
+
+
+**Resample using cubic interpolation**
+
+Using option 1) "-inter 3" cubic interpolation; 2) "-pad NaN" nan padding of niftireg.
+
+    ${REG_TOOL_ROOT}/reg_resample -inter 3 -pad NaN -ref ${FIXED_IM} -flo ${IM_INTERP_PRE} -trans ${TRANS_MAT} -res ${INTERP_DIR}/${file_name}
+
+Interpolated image:    
+![interpolated_with_nan](./figs/interpolated_with_nan.png)
+
+Average of 10 interpolated images, with union of non-nan region:
+![10_average_with_nan](./figs/10_average_with_nan.png)

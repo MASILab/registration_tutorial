@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Usage:
-# interp_roi_lung_mask.sh <bash_config> <ori nii file path> <affine matrix> <reference image> <out path> <temp folder>
+# ref_interp.sh <bash_config> <ori nii file path> <affine matrix> <reference image> <out path> <temp folder>
 
 start=`date +%s`
 
@@ -13,7 +13,6 @@ out_path=$(readlink -f $5)
 temp_folder=$(readlink -f $6)
 
 file_name=$(basename ${ori_file_path})
-#real_mat_name=$(basename ${real_mat_name})
 
 BASH_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 IF_REMOVE_TEMP_FILES=false
@@ -26,6 +25,7 @@ FIXED_IM=${ref_file_path}
 function interpolate_image {
     INTERP_LOC=$1
     INTERP_IN_IM=$2
+    INTERP_ENV_VAL=$3
 
     echo "Interpolate ${INTERP_LOC} image : ${INTERP_IN_IM}"
 
@@ -35,13 +35,16 @@ function interpolate_image {
     # 3. interp preprocess result
     TEMP_RESAMPLE=${temp_folder}/interp/${INTERP_LOC}/resample
     TEMP_PAD=${temp_folder}/interp/${INTERP_LOC}/padding
+    TEMP_TO_NAN=${temp_folder}/interp/${INTERP_LOC}/to_nan
     TEMP_INTERP_PRE=${temp_folder}/${INTERP_LOC}/preprocess_interp
     IM_RESAMPLE=${TEMP_RESAMPLE}/${file_name}
     IM_PAD=${TEMP_PAD}/${file_name}
+    IM_TO_NAN=${temp_folder}/interp/${INTERP_LOC}/to_nan/${file_name}
     IM_INTERP_PRE=${TEMP_INTERP_PRE}/${file_name}
 
     mkdir -p ${TEMP_RESAMPLE}
     mkdir -p ${TEMP_PAD}
+    mkdir -p ${TEMP_TO_NAN}
     mkdir -p ${TEMP_INTERP_PRE}
 
     # Preprocess for interpolation
@@ -51,15 +54,15 @@ function interpolate_image {
     TEMP_FOLDER_RESAMPLE=${temp_folder}/interp/resample_temp/${INTERP_LOC}
     resample_image ${INTERP_IN_IM} ${IM_RESAMPLE} ${TEMP_FOLDER_RESAMPLE}
     TEMP_FOLDER_PADDING=${temp_folder}/interp/padding_temp/${INTERP_LOC}
-    padding_image ${IM_RESAMPLE} ${IM_PAD} ${TEMP_FOLDER_PADDING}
-    cp ${IM_PAD} ${IM_INTERP_PRE}
+    padding_image ${IM_RESAMPLE} ${IM_PAD} ${TEMP_FOLDER_PADDING} ${INTERP_ENV_VAL}
+    ${C3D_ROOT}/c3d ${IM_PAD} -replace ${INTERP_ENV_VAL} nan -o ${IM_TO_NAN}
+    cp ${IM_TO_NAN} ${IM_INTERP_PRE}
 
     INTERP_DIR=${out_path}/interp/${INTERP_LOC}
     mkdir -p ${INTERP_DIR}
 
     set -o xtrace
-    ${REG_TOOL_ROOT}/reg_resample -inter 0 -pad -1000 -ref ${FIXED_IM} -flo ${IM_INTERP_PRE} -trans ${TRANS_MAT} -res ${INTERP_DIR}/${file_name}
-#    cp ${IM_INTERP_PRE} ${INTERP_DIR}/${file_name}
+    ${REG_TOOL_ROOT}/reg_resample -inter 3 -pad NaN -ref ${FIXED_IM} -flo ${IM_INTERP_PRE} -trans ${TRANS_MAT} -res ${INTERP_DIR}/${file_name}
     set +o xtrace
 
     if [ "$IF_REMOVE_TEMP_FILES" = true ] ; then
@@ -72,7 +75,7 @@ function interpolate_image {
 }
 
 # Process ori Image
-interpolate_image ori ${ori_file_path}
+interpolate_image ori ${ori_file_path} -3000
 
 # Process mask image
 TEMP_LUNG_MASK=${temp_folder}/lung_mask

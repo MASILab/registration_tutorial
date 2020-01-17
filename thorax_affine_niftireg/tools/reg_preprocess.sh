@@ -71,7 +71,7 @@ apply_mask ${IM_BODY_MASKED} ${IM_Z_ROI_REGION} ${IM_MASKED}
 
 # Padding image
 TEMP_FOLDER_PADDING=${temp_folder}/padding_temp
-padding_image ${IM_MASKED} ${IM_PAD} ${TEMP_FOLDER_PADDING}
+padding_image ${IM_MASKED} ${IM_PAD} ${TEMP_FOLDER_PADDING} -1000
 
 # Intensity clip
 intensity_clip ${IM_PAD} ${IM_INTENS_CLIP}
