@@ -43,12 +43,12 @@ Co-registration between preprocessed moving and fixed images.
 
 |Image 1| Image 2 | Image 3 | Image 4 | Image 5 | Reference | 
 |:---:|:---:|:---:|:---:|:---:|:---:|
-|![ref_intens_clip_C](./figs_Ab/moving_1.png)| ![ref_intens_clip_C](./figs_Ab/moving_2.png) | ![ref_intens_clip_C](./figs_Ab/moving_3.png) | ![ref_intens_clip_C](./figs_Ab/moving_4.png) | ![ref_intens_clip_C](./figs_Ab/moving_5.png) | ![ref_intens_clip_C](./figs_Ab/target_1.png) |
-|![ref_intens_clip_C](./figs_Ab/overlay_1.png)| ![ref_intens_clip_C](./figs_Ab/overlay_2.png) | ![ref_intens_clip_C](./figs_Ab/overlay_3.png) | ![ref_intens_clip_C](./figs_Ab/overlay_4.png) | ![ref_intens_clip_C](./figs_Ab/overlay_5.png) |  |
-|![ref_intens_clip_C](./figs_Ab/moving_11.png)| ![ref_intens_clip_C](./figs_Ab/moving_22.png) | ![ref_intens_clip_C](./figs_Ab/moving_33.png) | ![ref_intens_clip_C](./figs_Ab/moving_44.png) | ![ref_intens_clip_C](./figs_Ab/moving_55.png) | ![ref_intens_clip_C](./figs_Ab/target_11.png) |
-|![ref_intens_clip_C](./figs_Ab/overlay_11.png)| ![ref_intens_clip_C](./figs_Ab/overlay_22.png) | ![ref_intens_clip_C](./figs_Ab/overlay_33.png) | ![ref_intens_clip_C](./figs_Ab/overlay_44.png) | ![ref_intens_clip_C](./figs_Ab/overlay_55.png) |  |
-|![ref_intens_clip_C](./figs_Ab/moving_111.png)| ![ref_intens_clip_C](./figs_Ab/moving_222.png) | ![ref_intens_clip_C](./figs_Ab/moving_333.png) | ![ref_intens_clip_C](./figs_Ab/moving_444.png) | ![ref_intens_clip_C](./figs_Ab/moving_555.png) | ![ref_intens_clip_C](./figs_Ab/target_111.png) |
-|![ref_intens_clip_C](./figs_Ab/overlay_111.png)| ![ref_intens_clip_C](./figs_Ab/overlay_222.png) | ![ref_intens_clip_C](./figs_Ab/overlay_333.png) | ![ref_intens_clip_C](./figs_Ab/overlay_444.png) | ![ref_intens_clip_C](./figs_Ab/overlay_555.png) |  |
+| ![ref_intens_clip_C](./figs_Ab/moving_1.png) | ![ref_intens_clip_C](./figs_Ab/moving_2.png) | ![ref_intens_clip_C](./figs_Ab/moving_3.png) | ![ref_intens_clip_C](./figs_Ab/moving_4.png) | ![ref_intens_clip_C](./figs_Ab/moving_5.png) | ![ref_intens_clip_C](./figs_Ab/target_1.png) |
+| ![ref_intens_clip_C](./figs_Ab/overlay_1.png) | ![ref_intens_clip_C](./figs_Ab/overlay_2.png) | ![ref_intens_clip_C](./figs_Ab/overlay_3.png) | ![ref_intens_clip_C](./figs_Ab/overlay_4.png) | ![ref_intens_clip_C](./figs_Ab/overlay_5.png) |  |
+| ![ref_intens_clip_C](./figs_Ab/moving_11.png) | ![ref_intens_clip_C](./figs_Ab/moving_22.png) | ![ref_intens_clip_C](./figs_Ab/moving_33.png) | ![ref_intens_clip_C](./figs_Ab/moving_44.png) | ![ref_intens_clip_C](./figs_Ab/moving_55.png) | ![ref_intens_clip_C](./figs_Ab/target_11.png) |
+| ![ref_intens_clip_C](./figs_Ab/overlay_11.png) | ![ref_intens_clip_C](./figs_Ab/overlay_22.png) | ![ref_intens_clip_C](./figs_Ab/overlay_33.png) | ![ref_intens_clip_C](./figs_Ab/overlay_44.png) | ![ref_intens_clip_C](./figs_Ab/overlay_55.png) |  |
+| ![ref_intens_clip_C](./figs_Ab/moving_111.png) | ![ref_intens_clip_C](./figs_Ab/moving_222.png) | ![ref_intens_clip_C](./figs_Ab/moving_333.png) | ![ref_intens_clip_C](./figs_Ab/moving_444.png) | ![ref_intens_clip_C](./figs_Ab/moving_555.png) | ![ref_intens_clip_C](./figs_Ab/target_111.png) |
+| ![ref_intens_clip_C](./figs_Ab/overlay_111.png) | ![ref_intens_clip_C](./figs_Ab/overlay_222.png) | ![ref_intens_clip_C](./figs_Ab/overlay_333.png) | ![ref_intens_clip_C](./figs_Ab/overlay_444.png) | ![ref_intens_clip_C](./figs_Ab/overlay_555.png) |  |
 
 
 <!---
