@@ -16,9 +16,9 @@ The following script is a collection of preprocessing substeps. Both moving and 
 Preprocessing:
 
 If your image is not in abdomen ROI, refer to body part regression for generting body based ROI, and exclude region outside abdomen.
+
 | ![ref_intens_clip_A](./figs_Ab/BPR_demo.png) |![ref_intens_clip_A](./figs_Ab/BPR_demo2.png) |
-|:----------:|:----------:|
-|Body Part Regression |
+
 
 
 **Registration**
