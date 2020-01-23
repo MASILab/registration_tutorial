@@ -40,11 +40,14 @@ Co-registration between preprocessed moving and fixed images.
     ${REG_TOOL_ROOT}/linearBCV -F ${FIXED_IMAGE} -M ${MOVING_IMAGE} -O ${OUTPUT_AFFINE_MATRIX}
     ${REG_TOOL_ROOT}/deedsBCV -F ${FIXED_IMAGE} -M ${MOVING_IMAGE} -O ${OUTPUT_IMAGE} -A ${OUTPUT_AFFINE_MATRIX}_matrix.txt
 
-| ![ref_intens_clip_A](./figs_Ab/moving_demo1.png)|  ![padded_C](./figs_Ab/target_demo1.png) | ![ref_intens_clip_A](./figs_Ab/overlay_demo1.png) |
-| ![ref_intens_clip_A](./figs_Ab/moving_demo11.png)|  ![padded_C](./figs_Ab/target_demo11.png) | ![ref_intens_clip_A](./figs_Ab/overlay_demo11.png) |
+| ![ref_intens_clip_A](./figs_Ab/moving_demo1.png)  |  ![padded_C](./figs_Ab/target_demo1.png)   | ![ref_intens_clip_A](./figs_Ab/overlay_demo1.png)   |
+| ![ref_intens_clip_A](./figs_Ab/moving_demo11.png) |  ![padded_C](./figs_Ab/target_demo11.png)  | ![ref_intens_clip_A](./figs_Ab/overlay_demo11.png)  |
 | ![ref_intens_clip_A](./figs_Ab/moving_demo111.png)|  ![padded_C](./figs_Ab/target_demo111.png) | ![ref_intens_clip_A](./figs_Ab/overlay_demo111.png) |
+
+
 |:----------:|:-------------:|:------:|
 |Moving image | Target | Overlay |
+
 
 ### More examples
 |Image 1| Image 2 | Image 3 | Image 4 | Image 5 | Reference | 
