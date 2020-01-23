@@ -4,6 +4,8 @@ This repository includes the step-by-step instructions for body/thorax registrat
 
 + [thorax_affine_niftireg](./thorax_affine_niftireg/readme.md)
 + [thorax_deformable_deedsBCV](./thorax_deformable_deedsBCV/readme.md)
++ [abdomen_affine_niftireg](./abdomen_affine_niftireg/readme.md)
++ [abdomen_deformable_deedsBCV](./abdomen_deformable_deedsBCV/readme.md)
 
 ## Registration tools
 
