@@ -9,14 +9,11 @@ Please contact yucheng (yucheng.tang@vanderbilt.edu) for any issues.
 
 Run preprocessing for generating same resolution same dimension image to target.
 
-    # ${CONFIG_FILE} - configuration file (e.g. ./config/thorax_nonrigid_example_20200108.sh)
     # ${IN_IMAGE} - input image to preprocess
     # ${OUT_IMAGE} - output image
     # ${TEMP_FOLDER} - location for files of each preprocess substep  
     ./tools/reg_preprocess.sh ${CONFIG_FILE} ${IN_IMAGE} ${OUT_IMAGE} ${TEMP_FOLDER}
     
-Preprocessing sub-steps:
-
 Resampling to same resolution
 
     ${FREESURFER_ROOT}/mri_convert -vs $SPACING_X $SPACING_Y $SPACING_Z ${IN_IM} ${OUT_IM}
