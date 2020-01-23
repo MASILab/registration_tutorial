@@ -6,7 +6,6 @@ A working pipeline for Abdomen CT affine registration. NIFTIREG is used as regis
 
 **Preprocessing**:
 
-Preprocessing:
 
 If your image is not in abdomen ROI, refer to body part regression for generting body based ROI, and exclude region outside abdomen.
 
