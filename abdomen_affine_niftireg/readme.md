@@ -6,13 +6,6 @@ A working pipeline for Abdomen CT affine registration. NIFTIREG is used as regis
 
 **Preprocessing**:
 
-The following script is a collection of preprocessing substeps. Both moving and fixed images should be preprocessed before registration.
-
-    # ${CONFIG_FILE} - configuration file (e.g. ./config/thorax_affine_example_20200103.sh)
-    # ${IN_IMAGE} - input image to preprocess
-    # ${OUT_IMAGE} - output image
-
-
 Preprocessing:
 
 If your image is not in abdomen ROI, refer to body part regression for generting body based ROI, and exclude region outside abdomen.
