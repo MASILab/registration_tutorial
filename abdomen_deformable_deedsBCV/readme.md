@@ -43,8 +43,6 @@ Co-registration between preprocessed moving and fixed images.
 | ![ref_intens_clip_A](./figs_Ab/moving_demo1.png)  |  ![padded_C](./figs_Ab/target_demo1.png)   | ![ref_intens_clip_A](./figs_Ab/overlay_demo1.png)   |
 | ![ref_intens_clip_A](./figs_Ab/moving_demo11.png) |  ![padded_C](./figs_Ab/target_demo11.png)  | ![ref_intens_clip_A](./figs_Ab/overlay_demo11.png)  |
 | ![ref_intens_clip_A](./figs_Ab/moving_demo111.png)|  ![padded_C](./figs_Ab/target_demo111.png) | ![ref_intens_clip_A](./figs_Ab/overlay_demo111.png) |
-
-
 |:----------:|:-------------:|:------:|
 |Moving image | Target | Overlay |
 
