@@ -9,7 +9,7 @@ def generate_config_file(bash_config_path, num_processes, proj_root):
 # Runtime enviroment
 PROJ_ROOT={proj_root}
 SRC_ROOT=${{PROJ_ROOT}}/thorax_deformable_niftyreg
-PYEHON_ENV=/home/local/VANDERBILT/xuk9/anaconda3/envs/python37/bin/python
+PYTHON_ENV=/home/local/VANDERBILT/xuk9/anaconda3/envs/python37/bin/python
 
 # Tools
 TOOL_ROOT=${{PROJ_ROOT}}/packages
