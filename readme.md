@@ -2,10 +2,13 @@
 
 This repository includes the step-by-step instructions for abdomen/thorax registration pipelines used in MASI lab. Both affine and non-rigid registration will be discussed. Examples are provided to validate each step of the pipelines. Please refer to kaiwen.xu@vanderbilt.edu (Thorax) and yucheng.tang@vanderbilt.edu (Abdomen) for questions.
 
-+ [thorax_affine_niftireg](./thorax_affine_niftireg/readme.md)
-+ [thorax_deformable_deedsBCV](./thorax_deformable_deedsBCV/readme.md)
-+ [abdomen_affine_niftireg](./abdomen_affine_niftireg/readme.md)
-+ [abdomen_deformable_deedsBCV](./abdomen_deformable_deedsBCV/readme.md)
++ Thorax examples
+    + [affine_niftireg](./thorax_affine_niftireg/readme.md)
+    + [deformable_deedsBCV](./thorax_deformable_deedsBCV/readme.md)
+    + [deformable_niftyreg](./thorax_deformable_niftyreg/readme.md)
++ Abdomen examples
+    + [abdomen_affine_niftireg](./abdomen_affine_niftireg/readme.md)
+    + [abdomen_deformable_deedsBCV](./abdomen_deformable_deedsBCV/readme.md)
 
 ## Registration tools
 
