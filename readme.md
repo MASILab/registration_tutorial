@@ -3,12 +3,12 @@
 This repository includes the step-by-step instructions for abdomen/thorax registration pipelines used in MASI lab. Both affine and non-rigid registration will be discussed. Examples are provided to validate each step of the pipelines. Please refer to kaiwen.xu@vanderbilt.edu (Thorax) and yucheng.tang@vanderbilt.edu (Abdomen) for questions.
 
 + Thorax examples
-    + [affine_niftireg](src/thorax/affine/niftireg/readme.md)
-    + [deformable_deedsBCV](./src/thorax/non_rigid//thorax_deformable_deedsBCV/readme.md)
-    + [deformable_niftyreg](./thorax_deformable_niftyreg/readme.md)
+    + [affine_niftireg](./src/thorax/affine/niftireg/readme.md)
+    + [deformable_deedsBCV](./src/thorax/non_rigid/image2image/thorax_deformable_deedsBCV/readme.md)
+    + [deformable_niftyreg](./src/thorax/non_rigid/image2atlas/thorax_deformable_niftyreg/readme.md)
 + Abdomen examples
-    + [abdomen_affine_niftireg](./abdomen_affine_niftireg/readme.md)
-    + [abdomen_deformable_deedsBCV](./abdomen_deformable_deedsBCV/readme.md)
+    + [abdomen_affine_niftireg](./src/abdomen/abdomen_affine_niftireg/readme.md)
+    + [abdomen_deformable_deedsBCV](./src/abdomen/abdomen_deformable_deedsBCV/readme.md)
 
 ## Registration tools
 
@@ -23,7 +23,7 @@ All parameters are internally defined. Please contact heinrich@imi.uni-luebeck.d
 
 We are maintaining a customized version of deedsBCV with several additional utilities while sharing the core registration algo with the original.
 
-Please refer to [deedsBCV (masi version)](./packages/deedsBCV/src/README.md).
+Please refer to [deedsBCV (masi version)](./packages/deedsBCV/README.md).
 
 
 ### FSL
