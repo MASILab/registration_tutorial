@@ -55,7 +55,18 @@ Non-rigid registration is initialized by the first step affine registration.
     git clone https://github.com/MASILab/registration_tutorial.git ${PROJ_ROOT}
     bash ${PROJ_ROOT}/thorax_deformable_niftyreg/run_demo.sh
     
-The generated label maps are under ${PROJ_ROOT}/thorax_deformable_niftyreg/demo_output/out
+The script apply the pipeline on 5 demo scans from SPORE dataset are under location
+
+    /nfs/masi/registration_demo_data/thorax/non_rigid_niftyreg/demo_scan_nii
+
+Atlas and label (1/3 lung label maps) files are under location
+
+    /nfs/masi/registration_demo_data/thorax/non_rigid_niftyreg/atlas
+
+    
+The generated label maps are under 
+
+    ${PROJ_ROOT}/thorax_deformable_niftyreg/demo_output/out
     
 ### Example
 

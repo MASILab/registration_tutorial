@@ -255,7 +255,7 @@ function set_coordinate_origin_with_lung_mask {
   set -o xtrace
   ${PYTHON_ENV} ${SRC_ROOT}/tools/set_image_origin_to_lung_mask_center.py --in_image ${IN_IM} --in_mask ${IN_MASK} --out ${OUT} --c3d_root ${C3D_ROOT}
   set +o xtrace
-
+ 
   echo ""
 }
 

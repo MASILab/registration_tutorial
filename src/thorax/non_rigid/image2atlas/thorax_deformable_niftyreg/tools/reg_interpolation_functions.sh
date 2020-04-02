@@ -43,6 +43,7 @@ function interp_non_rigid_label_inverse_wrap_niftyreg_folder {
 
     set -o xtrace
     ${REG_TOOL_ROOT}/reg_transform \
+      -omp ${NUM_PROCESSES} \
       -ref ${moving_img} \
       -invNrr ${trans} ${moving_img} ${trans_revert}
     set +o xtrace
