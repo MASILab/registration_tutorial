@@ -14,6 +14,18 @@ This repository includes the step-by-step instructions for abdomen/thorax regist
 
 Please refer to the review paper [1]. The following full registration commands and configuration options are from the [supplementary materials](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4972188/bin/NIHMS805331-supplement-tbme-xu-2574816-mm_zip.zip) of [1].
 
+
+### DEEDS
+
+DEnsE Displacement Sampling (http://mpheinrich.de/software.html)
+All parameters are internally defined. Please contact heinrich@imi.uni-luebeck.de for additional information.
+
+
+We are maintaining a customized version of deedsBCV with several additional utilities while sharing the core registration algo with the original.
+
+Please refer to [deedsBCV (masi version)](./packages/deedsBCV/src/README.md).
+
+
 ### FSL
 
 FMRIB Software Library (FSL) version 5.0
@@ -165,11 +177,6 @@ NiftyReg, version with the 390df2baaf809a625ed5afe0dbc81ca6a3f7c647 Git hash
     reg_f3d -ln 5 --rUpTh 500 --fUpTh 500 -omp 2 -maxit 1000 -ref ${TARGETIMG} -flo ${SOURCEIMG} -aff ${AFFINETFM} -cpp ${NONRIGIDTFM} -res ${NONRIGIDIMG}
     # non-rigid label propagation
     reg_resample -inter 0 -ref ${TARGETIMG} -flo ${SOURCELABEL} -trans ${NONRIGIDTFM} -res ${NONRIGIDLABEL}
-
-### DEEDS
-
-DEnsE Displacement Sampling (http://mpheinrich.de/software.html)
-All parameters are internally defined. Please contact heinrich@imi.uni-luebeck.de for additional information.
 
 # References
 [1] Xu, Z., Lee, C. P., Heinrich, M. P., Modat, M., Rueckert, D., Ourselin, S., … Landman, B. A. (2016). Evaluation of Six Registration Methods for the Human Abdomen on Clinically Acquired CT. IEEE Transactions on Biomedical Engineering, 63(8), 1563–1572. https://doi.org/10.1109/TBME.2016.2574816
