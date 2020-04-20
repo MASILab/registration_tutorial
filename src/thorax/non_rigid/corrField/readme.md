@@ -11,6 +11,6 @@ Then the voxels outside the region were imputed with the ambient intensity.
 
 This approximation on boundary handling can lead to several type of registration flaws 
 
-![](./figs/boundary_issue_2.png | width=100)
+![](./figs/boundary_issue_2.png =100x)
 
-![](./figs/missing_intensity.png | width=100)
+![](./figs/missing_intensity.png =100x)

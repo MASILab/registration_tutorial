@@ -8,7 +8,7 @@ This repository includes the step-by-step instructions for abdomen/thorax regist
     + [affine_niftireg](./src/thorax/affine/niftireg/readme.md)
     + [deformable_deedsBCV](./src/thorax/non_rigid/image2image/thorax_deformable_deedsBCV/readme.md)
     + [deformable_niftyreg](./src/thorax/non_rigid/image2atlas/thorax_deformable_niftyreg/readme.md)
-    + [deformable_corrField](./src/thorax/corrField/readme.md)
+    + [deformable_corrField](./src/thorax/non_rigid/corrField/readme.md)
 + Abdomen examples
     + [abdomen_affine_niftireg](./src/abdomen/abdomen_affine_niftireg/readme.md)
     + [abdomen_deformable_deedsBCV](./src/abdomen/abdomen_deformable_deedsBCV/readme.md)
