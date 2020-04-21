@@ -145,6 +145,8 @@ $ /nfs/masi/registration_demo_data/thorax/non_rigid/corrField_eval/corrField_3_s
 
 [1] Heinrich, M. P., Jenkinson, M., Papiez, B. W., Brady, S. M., & Schnabel, J. A. (2013). Towards realtime multimodal fusion for image-guided interventions using self-similarities. Lecture Notes in Computer Science (Including Subseries Lecture Notes in Artificial Intelligence and Lecture Notes in Bioinformatics), 8149 LNCS(PART 1), 187–194. https://doi.org/10.1007/978-3-642-40811-3_24
 
+[2] Ruhaak, J., Polzin, T., Heldmann, S., Simpson, I. J. A., Handels, H., Modersitzki, J., & Heinrich, M. P. (2017). Estimation of Large Motion in Lung CT by Integrating Regularized Keypoint Correspondences into Dense Deformable Registration. IEEE Transactions on Medical Imaging, 36(8), 1746–1757. https://doi.org/10.1109/TMI.2017.2691259 
+
  
 
   
