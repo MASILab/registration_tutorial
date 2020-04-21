@@ -91,7 +91,7 @@ The plausibility of this design based on several assumptions:
 
 <img src="./figs/step_1_with_caption.png" alt="drawing" width="600"/>
 
-**With reduced searching radius (R = 16mm):**
+**Reduced searching radius (R = 16mm), enlarge the effective region:**
 
 <img src="./figs/step_2_with_caption.png" alt="drawing" width="600"/>
 
