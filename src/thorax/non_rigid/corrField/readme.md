@@ -32,7 +32,7 @@ by the input scans.
 
 ## Scan-adaptive Effective Registration Region
 
-The variation of valid region (non-nan) is pronominant among the affine warped scans.
+The valid region (non-nan) is different for each affine warped scan.
 This is caused by the variation of subject positioning while taking the CT scan,
 and is an issue that need to be taken in to consideration when designing an algorithm that targeted 
 for entire thoracic space. 
