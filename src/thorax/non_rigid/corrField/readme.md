@@ -2,7 +2,7 @@
 
 ## Issues with deedsBCV Pipeline
 
-The major difficulty for the deeds pipeline deeds is how to handle the problem of scan specified irregular valid regions.
+The major difficulty for the deeds pipeline is how to handle the problem of scan specified irregular valid regions.
 NaN voxels, voxels without meaningful intensity, are introduced to the field-of-view after affine registration. 
 These voxels must be excluded before feeding the scans into the registration engine. 
 The solution was to find a small lung segmentation based ROI region that can include most interested intensity information for later analysis, 
