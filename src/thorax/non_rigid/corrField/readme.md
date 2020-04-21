@@ -45,8 +45,8 @@ To achieve this, we need to consider the domain of definition for
 correspondence determination procedure of each key-point.
 For reference space, this region is defined by the stencil for self-similarity context (SSC) [1].
 On moving scan, this region
-is an area with radius **R** that determined by the summation of searching radius (-L),
-patch radius for similarity (-R) and stencil radius for self-similarity context (SSC).
+is an area with radius **R** that determined by the summation of **searching radius** (-L),
+**patch radius for similarity** (-R) and **stencil radius for self-similarity context (SSC)**.
 Then, the valid region for key-points can be defined as all
 voxels that having the distance to the valid region boundary larger than **R**. .
 This can be achieved by a distance transformation followed by a thresholding in practice
@@ -97,7 +97,8 @@ The plausibility of this design based on several assumptions:
 
 ## Experiments and Results
 
-A corrField based 3 step procedure is implemented.
+A corrField based 3 step procedure is implemented. Tested on a VLSP sub-dataset 
+with 50 affine co-registered scans.
 
 **Compare with deeds baseline**
 
