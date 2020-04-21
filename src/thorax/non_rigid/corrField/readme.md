@@ -30,7 +30,7 @@ Since our task is to register the whole thorax space,
 we need to design a mask that cover all effective information provided 
 by the input scans.
 
-## Scan-adaptive Effective Registration  Region
+## Scan-adaptive Effective Registration Region
 
 The variation of valid region (non-nan) is pronominant among the affine warped scans.
 This is caused by the variation of subject positioning while taking the CT scan,
@@ -71,7 +71,7 @@ of the size of effective registration region.
 
 A multi-level coarse-to-fine approach is developed to solve the problem.
 First, a large search radius is used to cover the most significant
-anatomical variation, e.g. about 50mm for diaphram. The the transformation
+anatomical variation, e.g. about 20mm for diaphram. The the transformation
 is interpolated from key-points to all voxels by the TPS.
 In next iteration, we use a smaller searching radius, e.g. 26mm.
 The warped image of previous step will serve as the moving image.
@@ -94,15 +94,30 @@ assumed to be true with our pipeline.
  
 **Initial step:**
 
-<img src="./figs/step_1.png" alt="drawing" width="600"/>
+<img src="./figs/step_1_with_caption.png" alt="drawing" width="600"/>
 
 **With reduced searching radius:**
 
-<img src="./figs/step_2.png" alt="drawing" width="600"/>
+<img src="./figs/step_2_with_caption.png" alt="drawing" width="600"/>
 
 ## Experiments and Results
 
+**Compare with deeds baseline**
 
+| Method           	| Dice (Lung) 	| Dice (Body) 	|
+|------------------	|-------------	|-------------	|
+| deeds            	| 0.95287     	| 0.93653     	|
+| corrField step 1 	| 0.92657     	| 0.97365     	|
+| corrField step 2 	| 0.93083     	| 0.98077     	|
+| corrField step 3 	| 0.94853     	| 0.99135     	|
+
+**Configuration of each step**
+
+| Step   	| Resolution (mm) 	| Search Radius (mm) 	| Keypoint dispersion (mm) 	| Regularization 	| Effective radius (mm) 	|
+|--------	|-----------------	|--------------------	|--------------------------	|----------------	|-----------------------	|
+| Step 1 	|           2x2x2 	|                 20 	|                       20 	|              1 	|                    32 	|
+| Step 2 	|           2x2x2 	|                 10 	|                       12 	|            0.5 	|                    22 	|
+| Step 3 	|           1x1x1 	|                 10 	|                       10 	|            0.1 	|                    16 	|
 
 ## References
 
