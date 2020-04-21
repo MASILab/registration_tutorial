@@ -2,29 +2,49 @@
 
 This repository includes the step-by-step instructions for abdomen/thorax registration pipelines used in MASI lab. Both affine and non-rigid registration will be discussed. Examples are provided to validate each step of the pipelines. Please refer to kaiwen.xu@vanderbilt.edu (Thorax) and yucheng.tang@vanderbilt.edu (Abdomen) for questions.
 
+## Demos of working pipeline
+
 + Thorax examples
     + [affine_niftireg](./src/thorax/affine/niftireg/readme.md)
     + [deformable_deedsBCV](./src/thorax/non_rigid/image2image/thorax_deformable_deedsBCV/readme.md)
     + [deformable_niftyreg](./src/thorax/non_rigid/image2atlas/thorax_deformable_niftyreg/readme.md)
+    + [deformable_corrField](./src/thorax/non_rigid/corrField/readme.md)
 + Abdomen examples
     + [abdomen_affine_niftireg](./src/abdomen/abdomen_affine_niftireg/readme.md)
     + [abdomen_deformable_deedsBCV](./src/abdomen/abdomen_deformable_deedsBCV/readme.md)
 
 ## Registration tools
 
-Please refer to the review paper [1]. The following full registration commands and configuration options are from the [supplementary materials](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4972188/bin/NIHMS805331-supplement-tbme-xu-2574816-mm_zip.zip) of [1].
+Here we maintain a list of registration tools that had been used or evaluated in MASI lab for thorax-abdomen-body registration tasks.
 
+For corrField and deeds, we maintain our own customized version in our github. 
+Please check [corrField_masi](https://github.com/MASILab/corrField_masi) and [deedsBCV_masi](./packages/deedsBCV/README.md). 
+They have been evaluated, fine tuned and are now serving as our main working non-rigid registration tools. 
+
+For FSL, ANTS, IRTK and NIFTYREG, the following contents are included from Zhoubing's review paper [[1]] as the known best practices.
+For details, please refer to [[1]] and also its [supplementary materials](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4972188/bin/NIHMS805331-supplement-tbme-xu-2574816-mm_zip.zip) of [1].
+
+### corrField
+
+A non-rigid registration tool developed by Dr. Mattias Heinrich [[2]][[3]]. The original link (zip package): [corrFieldWeb.zip](http://www.mpheinrich.de/code/corrFieldWeb.zip)  
+The tool follows a similar discrete optimization approach as deeds.
+The difference is, while deeds uses regular densely sampled control points to drive registration, corrField is based on a group of unstructured distributed keypoints.
+Given a mask on the reference image space, these key-points are selected based on a particular image feature detector.
+This provide flexibilities to control the ROI region that drive registration, but with penalty on registration stability (folding problem) and accuracy.
+
+The tool is carefully evaluated with the target to overcome the limited ROI flexibility of deeds.
+A multi-step coarse-to-fine approach is proposed to mitigate the folding problem and increase registration accuracy.
+
+For details, please refer to the session [deformable_corrField](./src/thorax/corrField/readme.md)
 
 ### DEEDS
 
-DEnsE Displacement Sampling (http://mpheinrich.de/software.html)
+DEnsE Displacement Sampling (http://mpheinrich.de/software.html) [[4]]
 All parameters are internally defined. Please contact heinrich@imi.uni-luebeck.de for additional information.
-
 
 We are maintaining a customized version of deedsBCV with several additional utilities while sharing the core registration algo with the original.
 
 Please refer to [deedsBCV (masi version)](./packages/deedsBCV/README.md).
-
 
 ### FSL
 
@@ -180,3 +200,6 @@ NiftyReg, version with the 390df2baaf809a625ed5afe0dbc81ca6a3f7c647 Git hash
 
 # References
 [1] Xu, Z., Lee, C. P., Heinrich, M. P., Modat, M., Rueckert, D., Ourselin, S., … Landman, B. A. (2016). Evaluation of Six Registration Methods for the Human Abdomen on Clinically Acquired CT. IEEE Transactions on Biomedical Engineering, 63(8), 1563–1572. https://doi.org/10.1109/TBME.2016.2574816
+[2] Heinrich, M. P., Handels, H., & Simpson, I. J. A. (2015). Estimating large lung motion in COPD patients by symmetric regularised correspondence fields. Lecture Notes in Computer Science (Including Subseries Lecture Notes in Artificial Intelligence and Lecture Notes in Bioinformatics), 9350, 338–345. https://doi.org/10.1007/978-3-319-24571-3_41
+[3] Ruhaak, J., Polzin, T., Heldmann, S., Simpson, I. J. A., Handels, H., Modersitzki, J., & Heinrich, M. P. (2017). Estimation of Large Motion in Lung CT by Integrating Regularized Keypoint Correspondences into Dense Deformable Registration. IEEE Transactions on Medical Imaging, 36(8), 1746–1757. https://doi.org/10.1109/TMI.2017.2691259
+[4] Heinrich, M. P., Jenkinson, M., Brady, M., & Schnabel, J. A. (2013). MRF-Based deformable registration and ventilation estimation of lung CT. IEEE Transactions on Medical Imaging, 32(7), 1239–1248. https://doi.org/10.1109/TMI.2013.2246577
