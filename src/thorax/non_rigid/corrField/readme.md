@@ -53,10 +53,6 @@ This can be achieved by a distance transformation followed by a thresholding in 
 The intersection of the key-point valid regions on both moving and reference space 
 form the registration mask for corrField.
 
-**Red - valid (non-nan) region**
-
-**Green - valid region for key-points**
-
 <img src="./figs/effective_region.png" alt="drawing" width="400"/>
 
 ## A Coarse-to-fine Approach
