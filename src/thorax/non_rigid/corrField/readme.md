@@ -1,4 +1,4 @@
-# Registration with scan-adaptive irregular ROI masks
+# Registration with Scan-adaptive Irregular ROI Masks
 
 ## Issues with deedsBCV Pipeline
 
@@ -23,7 +23,7 @@ on the moving scan of these key-points are located us.pnging similar discrete op
 as deeds. Then the registration of entire field-of-view is driven by these control points 
 using Thin Plate Spline interpolation.
 
-<img src="./figs/keypoints.png" alt="drawing" width="400"/>
+<img src="./figs/keypoints.png" alt="drawing" width="500"/>
 
 In this example, lung segmentation is used as the input mask.
 Since our task is to register the whole thorax space, 
@@ -59,7 +59,7 @@ form the registration mask for corrField.
 
 <img src="./figs/effective_region.png" alt="drawing" width="400"/>
 
-## A Multi-level Coarse-to-fine Procedure
+## A Coarse-to-fine Approach
 
 The difficult with the single registration step is the trade-off between 
 the size of effective registration region and the capability 
@@ -79,8 +79,7 @@ The valid region is also deformed as with the moving scan. The process is
 repeated until adequate portion the valid region is included. In our case,
 it is 16mm.
 
-The plausibility of this design based on several assumptions. These are
-assumed to be true with our pipeline.
+The plausibility of this design based on several assumptions:
 
 1. The registration result inside the effective mask is trustworthy.
 2. The anatomical variation is continuous spatially. With this assumption, 
@@ -92,15 +91,17 @@ assumed to be true with our pipeline.
    won't harm down stream tasks, e.g. the important regions of interest are always at
    the center part of the valid region.
  
-**Initial step:**
+**Initial step (R = 32mm):**
 
 <img src="./figs/step_1_with_caption.png" alt="drawing" width="600"/>
 
-**With reduced searching radius:**
+**With reduced searching radius (R = 16mm):**
 
 <img src="./figs/step_2_with_caption.png" alt="drawing" width="600"/>
 
 ## Experiments and Results
+
+A corrField based 3 step procedure is implemented.
 
 **Compare with deeds baseline**
 
@@ -111,6 +112,9 @@ assumed to be true with our pipeline.
 | corrField step 2 	| 0.93083     	| 0.98077     	|
 | corrField step 3 	| 0.94853     	| 0.99135     	|
 
+<img src="./figs/dice.png" alt="drawing" width="600"/>
+
+
 **Configuration of each step**
 
 | Step   	| Resolution (mm) 	| Search Radius (mm) 	| Keypoint dispersion (mm) 	| Regularization 	| Effective radius (mm) 	|
@@ -118,6 +122,24 @@ assumed to be true with our pipeline.
 | Step 1 	|           2x2x2 	|                 20 	|                       20 	|              1 	|                    32 	|
 | Step 2 	|           2x2x2 	|                 10 	|                       12 	|            0.5 	|                    22 	|
 | Step 3 	|           1x1x1 	|                 10 	|                       10 	|            0.1 	|                    16 	|
+
+## Implementation
+
+#### Code
+```
+https://github.com/MASILab/ThoraxNonRigid/tree/release_corrField_eval
+```
+
+#### Demo data folder 
+```
+/nfs/masi/registration_demo_data/thorax/non_rigid/corrField_eval
+```
+
+#### Run corrField 3 step version
+
+```
+$ /nfs/masi/registration_demo_data/thorax/non_rigid/corrField_eval/corrField_3_step/run.sh
+```
 
 ## References
 
