@@ -108,17 +108,27 @@ with 50 affine co-registered scans.
 | corrField step 1 	| 0.92657     	| 0.97365     	|
 | corrField step 2 	| 0.93083     	| 0.98077     	|
 | corrField step 3 	| 0.94853     	| 0.99135     	|
+| corrField fine tune 	| 0.95446     	| 0.99421     	|
 
-<img src="./figs/dice.png" alt="drawing" width="600"/>
+<img src="./figs/dice.png" alt="drawing" width="1000"/>
 
 
-**Configuration of each step**
+**Configuration of 3 steps**
 
-| Step   	| Resolution (mm) 	| Search Radius (mm) 	| Keypoint dispersion (mm) 	| Regularization 	| Effective radius (mm) 	|
-|--------	|-----------------	|--------------------	|--------------------------	|----------------	|-----------------------	|
-| Step 1 	|           2x2x2 	|                 20 	|                       20 	|              1 	|                    32 	|
-| Step 2 	|           2x2x2 	|                 10 	|                       12 	|            0.5 	|                    22 	|
-| Step 3 	|           1x1x1 	|                 10 	|                       10 	|            0.1 	|                    16 	|
+| Step   	| Resolution (mm) 	|  Search Radius 	| Keypoint dispersion 	| Patch Radius 	| Regularization 	| Effective radius (mm) 	|
+|--------	|----------------:	|---------------:	|--------------------:	|-------------:	|---------------:	|----------------------:	|
+| Step 1 	|           2x2x2 	| 10x5 (40x20mm) 	|      10x5 (20x10mm) 	|          3x2 	|              1 	|                    32 	|
+| Step 2 	|           2x2x2 	|  5x3 (20x12mm) 	|        6x3 (12x6mm) 	|          3x2 	|            0.5 	|                    22 	|
+| Step 3 	|           1x1x1 	| 10x5 (20x10mm) 	|       10x5 (10x5mm) 	|          6x4 	|            0.1 	|                    16 	|
+
+**Configuration of fine tune**
+
+| Step   	| Resolution (mm) 	|    Search Radius 	| Keypoint dispersion 	| Patch Radius 	| Regularization 	| Effective radius (mm) 	|
+|--------	|----------------:	|-----------------:	|--------------------:	|-------------:	|---------------:	|----------------------:	|
+| Step 1 	|           2x2x2 	| 30x15 (120x60mm) 	|        8x4 (16x8mm) 	|          6x4 	|              1 	|                    26 	|
+| Step 1 	|           2x2x2 	|   16x8 (64x32mm) 	|        7x3 (14x6mm) 	|          6x4 	|            0.7 	|                    16 	|
+| Step 2 	|           2x2x2 	|    5x3 (20x12mm) 	|        6x3 (12x6mm) 	|          3x2 	|            0.5 	|                    16 	|
+| Step 3 	|           1x1x1 	|   10x5 (20x10mm) 	|       10x5 (10x5mm) 	|          6x4 	|            0.1 	|                    16 	|
 
 ## Implementation
 
