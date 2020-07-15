@@ -158,7 +158,7 @@ Advanced Normalization Tools (ANTs) version 1.9
     # affine label propagation
     antsApplyTransforms --dimensionality 3 -i ${SOURCELABEL} -o ${AFFINELABEL} -r ${TARGETIMG} -t ${AFFINETFM} -n NearestNeighbor
     # non-rigid image registration
-    antsRegistration --dimensionality 3 --metric [${TARGETIMG},${SOURCEIMG},1,4] --interpolation Linear --transform SyN[0.1,3,0] --initial-moving-transform ${AFFINETFM} --winsorize-image-intensities [0.005,0.995] --convergence [100x100x70x50x20,1e-6,10] --shrink-factors 10x6x4x2x1 --smoothing-sigmas 5x3x2x1x0vox --float --output ${NONRIGIDTFMPREFIX}
+    antsRegistration --dimensionality 3 --metric CC[${TARGETIMG},${SOURCEIMG},1,4] --interpolation Linear --transform SyN[0.1,3,0] --initial-moving-transform ${AFFINETFM} --winsorize-image-intensities [0.005,0.995] --convergence [100x100x70x50x20,1e-6,10] --shrink-factors 10x6x4x2x1 --smoothing-sigmas 5x3x2x1x0vox --float --output ${NONRIGIDTFMPREFIX}
     # non-rigid label propagation
     antsApplyTransforms --dimensionality 3 -i ${SOURCELABEL} -o ${NONRIGIDLABEL} -r ${TARGETIMG} -t ${NONRIGIDTFMWARP} ${NONRIGIDTFMAFFINE} -n NearestNeighbor
 
@@ -192,7 +192,7 @@ Advanced Normalization Tools (ANTs) version 1.9
     # affine label propagation
     antsApplyTransforms --dimensionality 3 -i ${SOURCELABEL} -o ${AFFINELABEL} -r ${TARGETIMG} -t ${AFFINETFM} -n NearestNeighbor
     # non-rigid image registration
-    antsRegistration --dimensionality 3 --metric [${TARGETIMG},${SOURCEIMG},1,4] --interpolation Linear --transform SyN[0.1,3,0] --initial-moving-transform ${AFFINETFM} --winsorize-image-intensities [0.005,0.995] --convergence [100x100x70x50x0,1e-6,10] --shrink-factors 10x6x4x2x1 --smoothing-sigmas 5x3x2x1x0vox --float --output ${NONRIGIDTFMPREFIX}
+    antsRegistration --dimensionality 3 --metric MI[${TARGETIMG},${SOURCEIMG},1,4] --interpolation Linear --transform SyN[0.1,3,0] --initial-moving-transform ${AFFINETFM} --winsorize-image-intensities [0.005,0.995] --convergence [100x100x70x50x0,1e-6,10] --shrink-factors 10x6x4x2x1 --smoothing-sigmas 5x3x2x1x0vox --float --output ${NONRIGIDTFMPREFIX}
     # non-rigid label propagation
     antsApplyTransforms --dimensionality 3 -i ${SOURCELABEL} -o ${NONRIGIDLABEL} -r ${TARGETIMG} -t ${NONRIGIDTFMWARP} ${NONRIGIDTFMAFFINE} -n NearestNeighbor
 
