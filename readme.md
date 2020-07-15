@@ -14,7 +14,7 @@ Yuankai Huo<sup>1</sup>,
 Steve A. Deppen<sup>2</sup>,
 Alexis B. Paulson<sup>2</sup>,
 Kim L. Sandler<sup>2</sup>,
-Bennett A. Landman<sup>2</sup>
+Bennett A. Landman<sup>1</sup>
 
 <sup>1</sup> Vanderbilt University, Nashville TN 37235, USA
 
