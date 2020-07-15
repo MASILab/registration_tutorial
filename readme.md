@@ -2,6 +2,51 @@
 
 This repository includes the step-by-step instructions for abdomen/thorax registration pipelines used in MASI lab. Both affine and non-rigid registration will be discussed. Examples are provided to validate each step of the pipelines. Please refer to kaiwen.xu@vanderbilt.edu (Thorax) and yucheng.tang@vanderbilt.edu (Abdomen) for questions.
 
+# Contributors
+
+Kaiwen Xu<sup>1*</sup>,
+Yucheng Tang<sup>1*</sup>,
+Riqiang Gao<sup>1</sup>,
+Mirza S. Khan<sup>1</sup>,
+Shunxing Bao<sup>1</sup>,
+Yuankai Huo<sup>1</sup>,
+Steve A. Deppen<sup>2</sup>,
+Alexis B. Paulson<sup>2</sup>,
+Kim L. Sandler<sup>2</sup>,
+Bennett A. Landman<sup>2</sup>
+
+<sup>1</sup> Vanderbilt University, Nashville TN 37235, USA
+
+<sup>2</sup> Vanderbilt University Medical Center, Nashville TN 37235, USA
+
+<sup>*</sup> Maintainers of this repository
+
+# Citation
+
+If you find methods described in this tutorial can help your work, please cite:
+
+Kaiwen Xu, Yucheng Tang, Riqiang Gao, Mirza S. Khan, Shunxing Bao, Yuankai Huo, Steve A. Deppen, Alexis B. Paulson, Kim L. Sandler, Bennett A. Landman. (2020, July 13). Tutorial for Thorax / Abdomen Registration (Version v1.0). Zenodo. http://doi.org/10.5281/zenodo.3942004
+
+    @misc{kaiwen_xu_2020_3942004,
+      author       = {Kaiwen Xu and
+                      Yucheng Tang and
+                      Riqiang Gao and
+                      Mirza S. Khan and
+                      Shunxing Bao and
+                      Yuankai Huo and
+                      Steve A. Deppen and
+                      Alexis B. Paulson and
+                      Kim L. Sandler and
+                      Bennett A. Landman},
+      title        = {Tutorial for Thorax / Abdomen Registration},
+      month        = jul,
+      year         = 2020,
+      publisher    = {Zenodo},
+      version      = {v1.0},
+      doi          = {10.5281/zenodo.3942004},
+      url          = {https://doi.org/10.5281/zenodo.3942004}
+    }
+
 ## Demos of working pipeline
 
 + Thorax examples
@@ -201,6 +246,9 @@ NiftyReg, version with the 390df2baaf809a625ed5afe0dbc81ca6a3f7c647 Git hash
 
 # References
 [1] Xu, Z., Lee, C. P., Heinrich, M. P., Modat, M., Rueckert, D., Ourselin, S., … Landman, B. A. (2016). Evaluation of Six Registration Methods for the Human Abdomen on Clinically Acquired CT. IEEE Transactions on Biomedical Engineering, 63(8), 1563–1572. https://doi.org/10.1109/TBME.2016.2574816
+
 [2] Heinrich, M. P., Handels, H., & Simpson, I. J. A. (2015). Estimating large lung motion in COPD patients by symmetric regularised correspondence fields. Lecture Notes in Computer Science (Including Subseries Lecture Notes in Artificial Intelligence and Lecture Notes in Bioinformatics), 9350, 338–345. https://doi.org/10.1007/978-3-319-24571-3_41
+
 [3] Ruhaak, J., Polzin, T., Heldmann, S., Simpson, I. J. A., Handels, H., Modersitzki, J., & Heinrich, M. P. (2017). Estimation of Large Motion in Lung CT by Integrating Regularized Keypoint Correspondences into Dense Deformable Registration. IEEE Transactions on Medical Imaging, 36(8), 1746–1757. https://doi.org/10.1109/TMI.2017.2691259
+
 [4] Heinrich, M. P., Jenkinson, M., Brady, M., & Schnabel, J. A. (2013). MRF-Based deformable registration and ventilation estimation of lung CT. IEEE Transactions on Medical Imaging, 32(7), 1239–1248. https://doi.org/10.1109/TMI.2013.2246577
