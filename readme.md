@@ -69,12 +69,12 @@ For corrField and deeds, we maintain our own customized version in our github.
 Please check [corrField_masi](https://github.com/MASILab/corrField_masi) and [deedsBCV_masi](./packages/deedsBCV/README.md). 
 They have been evaluated, fine tuned and are now serving as our main working non-rigid registration tools. 
 
-For FSL, ANTS, IRTK and NIFTYREG, the following contents are included from Zhoubing's review paper [[1]] as the known best practices.
-For details, please refer to [[1]] and also its [supplementary materials](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4972188/bin/NIHMS805331-supplement-tbme-xu-2574816-mm_zip.zip) of [1].
+For FSL, ANTS, IRTK and NIFTYREG, the following contents are included from Zhoubing's review paper [1] as the known best practices.
+For details, please refer to [1] and also its [supplementary materials](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4972188/bin/NIHMS805331-supplement-tbme-xu-2574816-mm_zip.zip) of [1].
 
 ### corrField
 
-A non-rigid registration tool developed by Dr. Mattias Heinrich [[2]][[3]]. The original link (zip package): [corrFieldWeb.zip](http://www.mpheinrich.de/code/corrFieldWeb.zip)  
+A non-rigid registration tool developed by Dr. Mattias Heinrich [2][3]. The original link (zip package): [corrFieldWeb.zip](http://www.mpheinrich.de/code/corrFieldWeb.zip)  
 The tool follows a similar discrete optimization approach as deeds.
 The difference is, while deeds uses regular densely sampled control points to drive registration, corrField is based on a group of unstructured distributed keypoints.
 Given a mask on the reference image space, these key-points are selected based on a particular image feature detector.
@@ -87,7 +87,7 @@ For details, please refer to the session [deformable_corrField](./src/thorax/cor
 
 ### DEEDS
 
-DEnsE Displacement Sampling (http://mpheinrich.de/software.html) [[4]]
+DEnsE Displacement Sampling (http://mpheinrich.de/software.html) [4]
 All parameters are internally defined. Please contact heinrich@imi.uni-luebeck.de for additional information.
 
 We are maintaining a customized version of deedsBCV with several additional utilities while sharing the core registration algo with the original.
