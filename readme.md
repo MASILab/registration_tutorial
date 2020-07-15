@@ -8,6 +8,7 @@ Kaiwen Xu<sup>1*</sup>,
 Yucheng Tang<sup>1*</sup>,
 Riqiang Gao<sup>1</sup>,
 Mirza S. Khan<sup>1</sup>,
+Ho Hin Lee<sup>1</sup>,
 Shunxing Bao<sup>1</sup>,
 Yuankai Huo<sup>1</sup>,
 Steve A. Deppen<sup>2</sup>,
@@ -32,6 +33,7 @@ Kaiwen Xu, Yucheng Tang, Riqiang Gao, Mirza S. Khan, Shunxing Bao, Yuankai Huo, 
                       Yucheng Tang and
                       Riqiang Gao and
                       Mirza S. Khan and
+                      Ho Hin Lee and
                       Shunxing Bao and
                       Yuankai Huo and
                       Steve A. Deppen and
