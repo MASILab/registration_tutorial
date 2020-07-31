@@ -11,7 +11,7 @@ Same non-rigid algorithm as *deedsBCV* but with the inverse mapping fields outpu
 This is necessary for *applyBCVinv* and *getJacobian* to be functional.
 
 #### ./applyBCVinv
-Apply the inversion of deformation field. The input .dat file should be the output of deedsBCVwinv (not deedsBCV).
+Apply the inversion of deformation field. The input .dat file should be the output of deedsBCVwinv (not deedsBCV). This tool can accept a parameter for the affine matrix which is the inverse of the affine matrix generate by deedsBCVwinv. The affine matrix inversion is implemented in the script ./invert_matrix_txt.py.
 
 #### ./getJacobian
 Get the map of Jacobian determinants. The Jacobian is calculated with the the inversed transformation field. 
